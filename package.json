@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A benchmark comparing performance of async/await in different HTTP frameworks",
   "scripts": {
+    "start": "node --expose-gc ./bench.js",
     "test": "mocha --exit test.js"
   },
   "repository": {
@@ -16,6 +17,8 @@
   },
   "homepage": "https://github.com/bajtos/async-frameworks#readme",
   "dependencies": {
+    "autocannon": "^0.16.5",
+    "byline": "^5.0.0",
     "express": "^4.16.2",
     "express-promise-router": "^2.0.0",
     "fastify": "^0.30.2",

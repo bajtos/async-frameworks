@@ -3,12 +3,7 @@
 const supertest = require('supertest');
 const db = require('./lib/db');
 
-const apps = {
-  express: require('./lib/express'),
-  koa: require('./lib/koa'),
-  fastify: require('./lib/fastify'),
-  hapi: require('./lib/hapi'),
-};
+const apps = require('./lib/index');
 
 before(db.connect);
 after(db.close);
