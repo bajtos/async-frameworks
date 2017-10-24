@@ -1,0 +1,29 @@
+{
+  "name": "async-frameworks",
+  "version": "1.0.0",
+  "description": "A benchmark comparing performance of async/await in different HTTP frameworks",
+  "scripts": {
+    "test": "mocha --exit test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bajtos/async-frameworks.git"
+  },
+  "author": "Miroslav Bajtoš <mbajtoss@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bajtos/async-frameworks/issues"
+  },
+  "homepage": "https://github.com/bajtos/async-frameworks#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "express-promise-router": "^2.0.0",
+    "fastify": "^0.30.2",
+    "hapi": "^16.6.2",
+    "koa": "^2.3.0",
+    "koa-router": "^7.2.1",
+    "mocha": "^4.0.1",
+    "mongodb": "^2.2.33",
+    "supertest": "^3.0.0"
+  }
+}
