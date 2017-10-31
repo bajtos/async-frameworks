@@ -10,15 +10,18 @@ main().then(
   err => console.error(err));
 
 async function main() {
-  const results = {};
+  const reqsPerSec = {};
+  const latency = {};
   for (const framework in apps) {
     const r = await runBenchmark(framework);
-    results[framework] = r.requests.average;
+    reqsPerSec[framework] = r.requests.average;
+    latency[framework] = r.latency.average;
     await sleep(1);
     gc && gc();
     await sleep(1);
   }
-  console.log(results);
+  console.log('Requests per second', reqsPerSec);
+  console.log('Latency', latency);
 }
 
 async function runBenchmark(framework) {
