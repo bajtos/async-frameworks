@@ -11,7 +11,7 @@ after(db.close);
 Object.keys(apps).forEach(name => {
   describe(`${name} app`, () => {
     it('works', async () => {
-      const port = await apps[name]();
+      const port = await apps[name].start();
       await verify(port);
     });
   });
