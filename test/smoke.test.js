@@ -1,9 +1,9 @@
 'use strict';
 
 const supertest = require('supertest');
-const db = require('./lib/db');
+const db = require('../lib/db');
 
-const apps = require('./lib/index');
+const apps = require('../lib/index');
 
 before(db.connect);
 after(db.close);
