@@ -6,8 +6,9 @@ const autocannon = require('autocannon');
 const apps = require('./lib/index');
 
 main().then(
-  () => console.log('done'),
-  err => console.error(err));
+  () => { console.log('done'); process.exit(0); },
+  err => { console.error(err); process.exit(1); },
+);
 
 async function main() {
   const reqsPerSec = {};
