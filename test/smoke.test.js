@@ -1,9 +1,9 @@
 'use strict';
 
 const supertest = require('supertest');
-const db = require('./lib/db');
+const db = require('../lib/db');
 
-const apps = require('./lib/index');
+const apps = require('../lib/index');
 
 before(db.connect);
 after(db.close);
@@ -11,7 +11,7 @@ after(db.close);
 Object.keys(apps).forEach(name => {
   describe(`${name} app`, () => {
     it('works', async () => {
-      const port = await apps[name]();
+      const port = await apps[name].start();
       await verify(port);
     });
   });

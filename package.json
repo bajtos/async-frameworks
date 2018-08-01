@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "A benchmark comparing performance of async/await in different HTTP frameworks",
   "scripts": {
+    "prestart": "tsc",
     "start": "node --expose-gc ./bench.js",
-    "test": "mocha --exit test.js"
+    "pretest": "tsc",
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,9 @@
   },
   "homepage": "https://github.com/bajtos/async-frameworks#readme",
   "dependencies": {
+    "@loopback/core": "^0.11.2",
+    "@loopback/repository": "^0.14.2",
+    "@loopback/rest": "^0.19.2",
     "autocannon": "^2.4.1",
     "byline": "^5.0.0",
     "express": "^4.16.2",
@@ -25,8 +30,11 @@
     "hapi": "^17.0.0-rc9",
     "koa": "^2.3.0",
     "koa-router": "^7.2.1",
+    "loopback": "^3.21.0",
+    "loopback-connector-mongodb": "^3.5.0",
     "mocha": "^5.2.0",
     "mongodb": "^3.1.1",
-    "supertest": "^3.0.0"
+    "supertest": "^3.0.0",
+    "typescript": "^3.0.1"
   }
 }
